@@ -23,7 +23,7 @@ public class PatientRegistry {
      * The optional encapsulation extension requires returning a defensive copy.
      */
     public Patient[] getPatientRegistry() {
-        return null; // TODO REQUIRED: Return the patients currently stored.
+        return patientRegistry; 
     }
 
     public Patient getPatientByID(String patientID) {
