@@ -10,11 +10,15 @@ public class PatientRegistry {
     private static final int INITIAL_CAPACITY = 10;
 
     public PatientRegistry() {
-        // TODO REQUIRED: Create the initial array and set the starting size.
+        patientRegistry = new Patient[INITIAL_CAPACITY];
+        size = 0;
     }
 
     public void addPatient(Patient patient) {
-        // TODO REQUIRED: Add a patient to the registry.
+        if (size < INITIAL_CAPACITY) {
+            patientRegistry[size] = patient;
+            size ++;
+        }
         // TODO OPTIONAL (+5%): Expand the array when it becomes full.
     }
 
@@ -27,7 +31,11 @@ public class PatientRegistry {
     }
 
     public Patient getPatientByID(String patientID) {
-        return null; // TODO REQUIRED: Search for and return the matching patient.
+        for (int i=0; i < size; i++) {
+            if (patientRegistry[i].getPatientID().equals(patientID)) return patientRegistry[i]; // if the ID matches the .get method, 
+                                                                                                // then the patient will be displayed 
+        }
+        return null;
     }
 
     /**
@@ -58,8 +66,12 @@ public class PatientRegistry {
     }
     
     @Override
+   String displayInfo = ""; // initiate first so the names don't get replaced during each loop
     public String toString() {
-        return ""; // TODO REQUIRED: Return a useful representation of the registry.
+        for (int i=0; i < size ; i++) {
+            displayInfo += patientRegistry[i] + "\n"; // the patients will be added each loop
+        }
+        return display;
     }
 
 }
