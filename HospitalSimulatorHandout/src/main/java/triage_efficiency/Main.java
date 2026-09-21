@@ -18,8 +18,12 @@ public class Main {
      */
     public static Patient[] generatePatients(int count) {
         // TODO REQUIRED: Create the patient array and fill it with sample data.
-        return null; // Replace this with your implementation.
+        Patient [] patients = new Patient[count];
+
+        
+    return patients;  
     }
+    
 
     /**
      * REQUIRED (80%): Sort patients by patientID before binary search.

@@ -1,6 +1,5 @@
 package triage_efficiency;
 
-import java.util.*;
 import patient_intake.Patient;
 
 public class EfficiencyTester {
@@ -16,6 +15,7 @@ public class EfficiencyTester {
     public Patient linearSearch(Patient[] patients, String pid) {
         // TODO REQUIRED: Implement linear search.
         // Search the entire array in order and return the matching Patient.
+
        for (int i=0; i < patients.length; i++) { // checks every person in the array
             if (patients[i].getPatientID().equals(pid)) { //compares both ID's
                 return patients[i]; //Found it! and returns the matching patient
@@ -36,15 +36,15 @@ public class EfficiencyTester {
         // TODO REQUIRED: Implement iterative binary search.
         // The array must be sorted by patientID before calling this method.
        int low = 0;
-       int high = patients.length = 1;
+       int high = patients.length - 1;
 
        while (low <= high) {
-        int mid = low + ( high = low) / 2;
+        int mid = (high + low) / 2;
 
-        if (patients[mid].getPatientID.equals(pid) { // found the matching ID!
+        if (patients[mid].getPatientID().equals(pid)) { // found the matching ID!
             return patients[mid];
         }
-        else if (patients[mid].getPatientID.comparedTo(pid) > 0) { // middle ID too big?
+        else if (patients[mid].getPatientID().compareTo(pid) > 0) { // middle ID too big?
             low = mid + 1; // move to the right
         } 
         else {

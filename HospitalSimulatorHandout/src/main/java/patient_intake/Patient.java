@@ -13,7 +13,7 @@ public class Patient extends Person {
                    String chiefComplaint, int triageLevel, String currentStage, 
                    String assignedRoom, int arrivalHour, String insuranceID) {
         super(firstName, lastName, age);
-        this.patitentID = patientID;
+        this.patientID = patientID;
         this.chiefComplaint = chiefComplaint;
         this.triageLevel = triageLevel;
         this.currentStage = currentStage;
@@ -40,7 +40,7 @@ public class Patient extends Person {
     }
 
     public String getChiefComplaint() {
-        return cheifComplaint;
+        return chiefComplaint;
     }
 
     public int getTriageLevel() {
@@ -61,6 +61,7 @@ public class Patient extends Person {
 
     public String getInsuranceID() {
         return insuranceID;
+    }
 
     // Setters
     public void setPatientID(String patientID) {

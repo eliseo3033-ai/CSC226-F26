@@ -66,12 +66,12 @@ public class PatientRegistry {
     }
     
     @Override
-   String displayInfo = ""; // initiate first so the names don't get replaced during each loop
     public String toString() {
+        String displayInfo = ""; // initiate first so the names don't get replaced during each loop
         for (int i=0; i < size ; i++) {
             displayInfo += patientRegistry[i] + "\n"; // the patients will be added each loop
         }
-        return display;
+        return displayInfo;
     }
 
 }
