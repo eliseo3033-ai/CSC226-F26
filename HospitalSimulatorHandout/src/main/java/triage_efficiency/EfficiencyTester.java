@@ -16,7 +16,12 @@ public class EfficiencyTester {
     public Patient linearSearch(Patient[] patients, String pid) {
         // TODO REQUIRED: Implement linear search.
         // Search the entire array in order and return the matching Patient.
-        return null; // Remove this line and implement the method.
+       for (int i=0; i < patients.length; i++) { // checks every person in the array
+            if (patients[i].getPatientID().equals(pid)) { //compares both ID's
+                return patients[i]; //Found it! and returns the matching patient
+            }
+       }
+       return null; // was not found
     }
 
     /**
@@ -30,7 +35,23 @@ public class EfficiencyTester {
     public Patient binarySearch(Patient[] patients, String pid) {
         // TODO REQUIRED: Implement iterative binary search.
         // The array must be sorted by patientID before calling this method.
-        return null; // Remove this line and implement the method.
+       int low = 0;
+       int high = patients.length = 1;
+
+       while (low <= high) {
+        int mid = low + ( high = low) / 2;
+
+        if (patients[mid].getPatientID.equals(pid) { // found the matching ID!
+            return patients[mid];
+        }
+        else if (patients[mid].getPatientID.comparedTo(pid) > 0) { // middle ID too big?
+            low = mid + 1; // move to the right
+        } 
+        else {
+            high = mid - 1; // miidle ID too small? Move to the left
+        }
+        }
+       return null; // ID was not found in the array
     }
 
     /**
