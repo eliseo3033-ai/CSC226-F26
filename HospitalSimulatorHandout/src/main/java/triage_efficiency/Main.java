@@ -19,7 +19,9 @@ public class Main {
     public static Patient[] generatePatients(int count) {
         // TODO REQUIRED: Create the patient array and fill it with sample data.
         Patient [] patients = new Patient[count];
-
+        for (int i = 0; i < count; i++) {
+            
+        }
         
     return patients;  
     }
