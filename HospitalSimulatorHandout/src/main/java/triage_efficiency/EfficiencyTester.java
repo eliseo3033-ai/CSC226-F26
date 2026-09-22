@@ -45,10 +45,10 @@ public class EfficiencyTester {
             return patients[mid];
         }
         else if (patients[mid].getPatientID().compareTo(pid) > 0) { // middle ID too big?
-            low = mid + 1; // move to the right
+            high = mid + 1; // move to the right
         } 
         else {
-            high = mid - 1; // miidle ID too small? Move to the left
+            low = mid - 1; // miidle ID too small? Move to the left
         }
         }
        return null; // ID was not found in the array
