@@ -27,7 +27,13 @@ public class PatientRegistry {
      * The optional encapsulation extension requires returning a defensive copy.
      */
     public Patient[] getPatientRegistry() {
-        return patientRegistry; 
+        Patient [] patients = new Patient[size];
+
+        for (int i=0; i < size; i++) {
+            patients[i] = patientRegistry[i];
+        }
+        return patients;
+
     }
 
     public Patient getPatientByID(String patientID) {
@@ -67,7 +73,7 @@ public class PatientRegistry {
     
     @Override
     public String toString() {
-        String displayInfo = ""; // initiate first so the names don't get replaced during each loop
+        String displayInfo = "PatientRegistry || size = " + size +":\n"; // initiate first so the names don't get replaced during each loop
         for (int i=0; i < size ; i++) {
             displayInfo += patientRegistry[i] + "\n"; // the patients will be added each loop
         }

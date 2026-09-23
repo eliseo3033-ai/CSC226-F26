@@ -45,10 +45,10 @@ public class EfficiencyTester {
             return patients[mid];
         }
         else if (patients[mid].getPatientID().compareTo(pid) > 0) { // middle ID too big?
-            high = mid + 1; // move to the right
+            high = mid - 1; // move to the right
         } 
         else {
-            low = mid - 1; // miidle ID too small? Move to the left
+            low = mid + 1; // miidle ID too small? Move to the left
         }
         }
        return null; // ID was not found in the array
@@ -70,7 +70,7 @@ public class EfficiencyTester {
     public Patient logNSearch(Patient[] patients, String pid) {
         // TODO OPTIONAL: Research and implement a second O(log n) algorithm.
         // Cite your source and explain the approach in a comment before the logic.
-        return null; // Remove this line and implement the method.
+        return null;
     }
 
     public void timeDemo() {

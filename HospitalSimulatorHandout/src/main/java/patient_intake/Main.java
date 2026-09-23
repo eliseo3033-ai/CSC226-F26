@@ -21,11 +21,30 @@ public class Main {
             // TODO REQUIRED: Parse the fields from parts.
             // TODO REQUIRED: Split the full name into firstName and lastName.
             // TODO REQUIRED: Create a Patient and add it to patients.
+            String patientID = parts[0];
+            String name = parts[1];
+            int age = Integer.parseInt(parts[2]);
+            String chiefComplaint = parts[3];
+            int tirageLevel = Integer.parseInt(parts[4]);
+            String currentStage = parts[5];
+            String assignedRoom = parts[6];
+            int arrivalHour = Integer.parseInt(parts[7]);
+            String insuranceID = parts[8];
+
+            String nameParts[] = name.split(" ");
+            String firstName = nameParts[0];
+            String lastName = nameParts[1];
+
+            Patient patient = new Patient( patientID,  firstName,  lastName,  
+                                          age,  chiefComplaint, tirageLevel,  currentStage,  
+                                          assignedRoom,  arrivalHour,  insuranceID);
+
+            patients.addPatient(patient);
          }
 
-         // TODO REQUIRED: Display the completed registry.
+         System.out.println(patients);
       } catch (FileNotFoundException exception) {
-         // TODO REQUIRED: Report a missing input file.
+         System.out.println("File not found");
       }
    }
 }
