@@ -10,6 +10,7 @@ public class LinkedStack<T> implements StackInterface<T> {
 
     public void push(T element){
         //Push an element to the top of the stack
+        LinkedStack.push(element);
     }
     public T pop(){
         //remove an element from the top of the stack
@@ -19,6 +20,7 @@ public class LinkedStack<T> implements StackInterface<T> {
     public T top(){
         //return the data in the element from the top of the stack
         //note: what preconditions do we care about?
+
         return top; // placeholder
     }
 

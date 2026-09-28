@@ -5,8 +5,44 @@ import patient_intake.Patient;
 public class Main {
     public static void main(String[] args) {
         // TODO REQUIRED: Generate the patient data.
+        EfficiencyTester tester = new EfficiencyTester();
+
+        Patient[] patients = generatePatients(7);
+
         // TODO REQUIRED: Sort the data by patientID when needed.
+        patients = sortByPatientId(patients);
+
         // TODO REQUIRED: Run each search method and print a found and not-found example.
+
+        // Linear search test
+        System.out.println("Linear Search Test");
+        Patient result = tester.linearSearch(patients, "P009"); //ID found test
+        if (result != null) {
+            System.out.println("Patient ID found: " + result);
+        }
+        else System.out.println("Patient was not found");
+
+        result = tester.linearSearch(patients, "P043"); // ID not found test
+        if (result != null) {
+            System.out.println("Patient ID found: " + result);
+        }
+        else System.out.println("Patient was not found.");
+
+        //Binary Search Test
+        System.out.println("\nBinary Search");
+
+        result = tester.binarySearch(patients, "P008"); //ID found test
+        if (result != null) {
+            System.out.println("Patient ID found: " + result );
+        }
+        else System.out.println("Patient was not found.");
+
+        result = tester.binarySearch(patients, "P063"); //ID not found test
+        if (result != null) {
+            System.out.println("Patient ID found: " + result );
+        }
+        else System.out.println("Patient was not found.");
+
         // TODO OPTIONAL: Call timeDemo() to compare algorithm runtimes.
     }
 
