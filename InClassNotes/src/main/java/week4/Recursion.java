@@ -2,9 +2,12 @@ package week4;
 
 
 public class Recursion {
+
     public int fib(int n){
-        
+        //if (n == 0) return 0;
+
     }
+
     public static Integer countHi(String value){
         return 0;
     }
@@ -21,7 +24,13 @@ public class Recursion {
     }
 
     public static <T> int recursiveCounter(LLNode<T> node, int counter){
+       // String word  = "";
+        //if (word.equals("Hi")) 
+          //  counter++;
         
-    }
+        //return counter;
+    } 
+    
+   
 
 }

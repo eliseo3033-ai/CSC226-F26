@@ -10,6 +10,10 @@ public class EmergencyWaitingRoom {
 
     public EmergencyWaitingRoom() {
         // TODO: Create one empty FIFO queue for each triage level.
+        level1 = new LinkedQueue<>();
+        level2 = new LinkedQueue<>();
+        level3 = new LinkedQueue<>();
+        level4 = new LinkedQueue<>();
     }
 
     /**
@@ -19,7 +23,26 @@ public class EmergencyWaitingRoom {
      */
     public boolean addPatient(Patient patient) {
         // TODO: Validate the patient and place them in the matching lane.
-        return false;
+
+        if (patient == null) {
+            return false;
+        }
+        if (patient.getTriageLevel() < 1 || patient.getTriageLevel() > 4) {
+            return false;
+        }
+        else if (patient.getTriageLevel() == 1) {
+            level1.enqueue(patient); //adds patient to queue
+        }
+        else if (patient.getTriageLevel() == 2) {
+            level2.enqueue(patient);
+        }
+        else if (patient.getTriageLevel() == 3) {
+            level3.enqueue(patient);
+        }
+        else {
+            level4.enqueue(patient);
+        }
+        return true;
     }
 
     /**
@@ -27,16 +50,26 @@ public class EmergencyWaitingRoom {
      */
     public Patient nextPatient() {
         // TODO: Dequeue from the first non-empty lane, or return null if all are empty.
-        return null;
+        if (!level1.isEmpty()) return level1.dequeue();         // if the queues are not empty then dequeue the first patient
+        else if (!level2.isEmpty()) return level2.dequeue();
+        else if (!level3.isEmpty()) return level3.dequeue();
+        else if (!level4.isEmpty()) return level4.dequeue();
+        else return null;
     }
 
     public boolean isEmpty() {
         // TODO: Return true only when all four lanes are empty.
-        return false;
+        return level1.isEmpty() &&
+               level2.isEmpty() && 
+               level3.isEmpty() &&
+               level4.isEmpty();
     }
 
     public int size() {
         // TODO: Return the total number of patients across all four lanes.
-        return 0;
+        return level1.size() + 
+               level2.size() + 
+               level3.size() + 
+               level4.size();
     }
 }
