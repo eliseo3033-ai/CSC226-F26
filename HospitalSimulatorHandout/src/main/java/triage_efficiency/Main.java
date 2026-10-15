@@ -81,15 +81,19 @@ public class Main {
      */
     public static Patient[] sortByPatientId(Patient[] patients) {
         // TODO REQUIRED: Sort the array by patientID before testing binary search.
-        int lowestID = 0;
-        for (int i = 1; i < patients.length; i++) {
-            if (patients[i].getPatientID().compareTo(patients[lowestID].getPatientID()) < 0) {
-                lowestID = i;
-                Patient temp = patients[0];
-                patients[0] = patients[lowestID];
-                patients[lowestID] = temp;
+        for (int i = 0; i < patients.length - 1; i++) {
+            int lowestID = i;
+            for (int j = i+1; j < patients.length; j++) {
+                if (patients[j].getPatientID().compareTo(patients[lowestID].getPatientID()) < 0) {
+                    lowestID = j;
+                }
             }
+            Patient temp = patients[i];
+            patients[i] = patients[lowestID];
+            patients[lowestID] = temp;
+
         }
         return patients;
+
     }
 }

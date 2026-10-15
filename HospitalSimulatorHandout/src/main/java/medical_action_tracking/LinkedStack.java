@@ -42,6 +42,7 @@ public class LinkedStack<T> {
          else {
          T itemPeeking = top.data;
          return itemPeeking;
+         
          }
     }
 

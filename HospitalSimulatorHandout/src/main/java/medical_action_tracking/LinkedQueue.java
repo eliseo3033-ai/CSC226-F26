@@ -27,13 +27,13 @@ public class LinkedQueue<T> {
             throw new IllegalArgumentException();
         }
         Node newNode = new Node(item);
-        if (isEmpty()) {
+        if (isEmpty()) { // if the node is first in the queue it will be the rear and front
             front = newNode;
             rear = newNode;
             size++;
         }
         else {
-            rear.next = newNode;
+            rear.next = newNode; // a new node will point to the other and be set to the rear
             rear = newNode;
             size++;
         }
@@ -46,10 +46,10 @@ public class LinkedQueue<T> {
             return null;
         }
         else {
-            T frontData = front.data;
-            front = front.next;
+            T frontData = front.data; //save the data that is first in the queue
+            front = front.next; // set the front to the node next in line
             size--;
-            if (size == 0) {
+            if (size == 0) { // set front and rear null if the last node is dequeued
                 front = null;
                 rear = null;
             }
